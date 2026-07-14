@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.blueAccent)),
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent)),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
     );
@@ -30,64 +30,60 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: const Color(0xFFF3F3F3),
       appBar: AppBar(),
       body: Center(
-        child: Column(
-          mainAxisAlignment: .center,
-          children: [
-            Padding(
-              padding: EdgeInsets.all(16.0),
-
-              child: SizedBox(
-                height: 85,
-                child: Card(
-                  color: Colors.white,
-                  elevation: 8,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Row(
-                        crossAxisAlignment: .center,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Lasted code push ',
-                                style: TextStyle(
-                                  color: Colors.blueAccent,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                              ),
-                              SizedBox(height: 2),
-                              Text(
-                                'Update Repository',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-
-                                ),
-                              ),
-                            ],
-                          ),
-                          Spacer(),
-                          Icon(Icons.arrow_forward_ios, size: 16),
-                        ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(24),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.12),
+                  blurRadius: 24,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Latest Code Push',
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.9),
+                          fontWeight: FontWeight.w800,
+                          fontSize: 22,
+                          height: 1.2,
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Update Repository',
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.55),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          height: 1.2,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
+                const SizedBox(width: 12),
+                const Icon(Icons.arrow_forward, size: 26, color: Colors.black87),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

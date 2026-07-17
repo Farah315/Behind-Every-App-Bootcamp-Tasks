@@ -94,17 +94,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: _skills
                           .map(
                             (skill) => Chip(
-                          label: Text(skill),
-                          backgroundColor: Colors.blueGrey.withOpacity(
-                            0.1,
-                          ),
-                          labelStyle: const TextStyle(
-                            color: Colors.blueGrey,
-                            fontWeight: FontWeight.w500,
-                          ),
-                          side: BorderSide.none,
-                        ),
-                      )
+                              label: Text(skill),
+                              backgroundColor:
+                                  Colors.blueGrey.withOpacity(0.1),
+                              labelStyle: const TextStyle(
+                                color: Colors.blueGrey,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              side: BorderSide.none,
+                            ),
+                          )
                           .toList(),
                     ),
                   const SizedBox(height: 12),
